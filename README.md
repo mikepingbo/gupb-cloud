@@ -1,0 +1,53 @@
+﻿gupbcloud-base
+	gupbcloud-erueka
+	gupbcloud-config
+	gupbcloud-zipkin
+	gupbcloud-hystrix-dashboard
+	gupbcloud-admin
+	gupbcloud-gateway
+	gupbcloud-apollo
+gupbcloud-business
+	gupbcloud-sso
+	gupbcloud-member
+	gupbcloud-search
+	gupbcloud-seller
+	gupbcloud-pay
+	gupbcloud-order
+	gupbcloud-product
+	gupbcloud-promotion
+	gupbcloud-seckill
+	gupbcloud-loganalysis
+	gupbcloud-third
+	gupbcloud-util
+gupbcloud-backend
+	gupbcloud-admin
+	gupbcloud-seller
+	gupbcloud-schedule
+gupbcloud-other-service
+	gupbcloud-other1
+	gupbcloud-other2
+gupbcloud-tools
+	gupbcloud-mq
+	gupbcloud-es
+	gupbcloud-redis
+	gupbcloud-feign
+	gupbcloud-utis
+gupbcloud-bigdata
+	gupbcloud-logstash
+	gupbcloud-kafka
+	gupbcloud-hadoop
+gupbcloud-sh
+	gupbcloud-sql
+	gupbcloud-elk
+	gupbcloud-nginx
+	gupbcloud-zk
+	gupbcloud-devops
+	gupbcloud-gitlib
+	gupbcloud-jenkins
+	gupbcloud-zentao 禅道
+	gupbcloud-swagger
+	gupbcloud-maven
+	gupbcloud-idea
+	gupbcloud-xsell
+	gupbcloud-sqlyong
+	gupbcloud-mybatis

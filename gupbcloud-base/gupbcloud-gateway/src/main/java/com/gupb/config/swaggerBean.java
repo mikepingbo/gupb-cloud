@@ -1,0 +1,50 @@
+package com.gupb.config;
+
+import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+import springfox.documentation.swagger.web.SwaggerResource;
+import springfox.documentation.swagger.web.SwaggerResourcesProvider;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Configuration
+public class swaggerBean {
+
+    @Component
+    @Primary
+    class DocumentationConfig implements SwaggerResourcesProvider {
+        @Bean
+        public ServletRegistrationBean getServlet() {
+            HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
+            ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
+            registrationBean.setLoadOnStartup(1);
+            registrationBean.addUrlMappings("/hystrix.stream");
+            registrationBean.setName("HystrixMetricsStreamServlet");
+            return registrationBean;
+        }
+
+        @Override
+        public List<SwaggerResource> get() {
+            List resources = new ArrayList();
+            resources.add(swaggerResource("SSO单点登录系统","/api/sso/v2/api-docs","2.0"));
+    //            resources.add(swaggerResource("SSO单点登录系统","/api/sso/v2/api-docs","2.0"));
+    //            resources.add(swaggerResource("SSO单点登录系统","/api/sso/v2/api-docs","2.0"));
+
+
+            return resources;
+        }
+
+        private SwaggerResource swaggerResource(String name, String location, String version) {
+            SwaggerResource swaggerResource = new SwaggerResource();
+            swaggerResource.setName(name);
+            swaggerResource.setLocation(location);
+            swaggerResource.setSwaggerVersion(version);
+            return swaggerResource;
+        }
+    }
+}

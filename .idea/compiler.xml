@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gupbcloud-admin" />
+        <module name="gupbcloud-backend-admin-api" />
+        <module name="gupbcloud-backend-api" />
+        <module name="gupbcloud-backend-seller-api" />
+        <module name="gupbcloud-config" />
+        <module name="gupbcloud-customer-sso-api" />
+        <module name="gupbcloud-erueka" />
+        <module name="gupbcloud-gateway" />
+        <module name="gupbcloud-hystrix-dashboard" />
+        <module name="gupbcloud-seller" />
+        <module name="gupbcloud-sso" />
+        <module name="gupbcloud-util" />
+        <module name="gupbcloud-zipkin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gupbcloud" target="1.8" />
+      <module name="gupbcloud-admin" target="1.8" />
+      <module name="gupbcloud-backend" target="1.8" />
+      <module name="gupbcloud-backend-admin-api" target="1.8" />
+      <module name="gupbcloud-backend-api" target="1.8" />
+      <module name="gupbcloud-backend-seller-api" target="1.8" />
+      <module name="gupbcloud-base" target="1.8" />
+      <module name="gupbcloud-common" target="1.8" />
+      <module name="gupbcloud-config" target="1.8" />
+      <module name="gupbcloud-customer" target="1.8" />
+      <module name="gupbcloud-customer-sso-api" target="1.8" />
+      <module name="gupbcloud-erueka" target="1.8" />
+      <module name="gupbcloud-feign-api" target="1.8" />
+      <module name="gupbcloud-gateway" target="1.8" />
+      <module name="gupbcloud-hystrix-dashboard" target="1.8" />
+      <module name="gupbcloud-seller" target="1.8" />
+      <module name="gupbcloud-sso" target="1.8" />
+      <module name="gupbcloud-util" target="1.8" />
+      <module name="gupbcloud-zipkin" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
