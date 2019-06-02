@@ -14,7 +14,7 @@
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${logPath}/gupbcloud-seller.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-            <maxFileSize>100MB</maxFileSize>
+            <maxFileSize>50MB</maxFileSize>
             <maxHistory>50</maxHistory>
             <totalSizeCap>10GB</totalSizeCap>
         </rollingPolicy>

@@ -41,19 +41,19 @@ public class Fallback implements FallbackProvider {
 
 			@Override
 			public HttpStatus getStatusCode() throws IOException {
-				
+
 				return HttpStatus.OK;
 			}
 
 			@Override
 			public int getRawStatusCode() throws IOException {
-				
+
 				return HttpStatus.OK.value();
 			}
 
 			@Override
 			public String getStatusText() throws IOException {
-				
+
 				return HttpStatus.OK.getReasonPhrase();
 			}
 
