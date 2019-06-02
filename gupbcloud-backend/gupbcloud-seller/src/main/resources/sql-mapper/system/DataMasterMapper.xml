@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gupb.seller.repository.system.DataMasterRepository">
+  	<select id="getCodes" parameterType="java.util.Map" resultType="com.gupb.seller.model.system.DataMaster">
+		select 	`master_code`,
+				`master_cd`,
+				`master_text`,
+				`sort_order`,
+				`state`,
+				`create_id`,
+				`create_name`,
+				`create_time`,
+				`update_id`,
+				`update_name`,
+				`update_time`
+		from 	`data_master`
+		<include refid="getCondition"/>
+		order by `master_code`, `sort_order`, `master_cd`
+	</select>
+
+	<sql id="getCondition">
+		<where>
+			<if test="queryMap.masterCode != null and queryMap.masterCode !=''"  >
+				and `master_code` = #{queryMap.masterCode}
+			</if>
+		</where>
+	</sql>
+</mapper>

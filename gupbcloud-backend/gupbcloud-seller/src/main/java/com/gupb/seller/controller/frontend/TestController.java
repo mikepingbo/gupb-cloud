@@ -1,4 +1,4 @@
-package com.gupb.seller.controller;
+package com.gupb.seller.controller.frontend;
 
 import com.gupb.admin.feign.TestFeignApi;
 import com.gupb.base.BaseController;

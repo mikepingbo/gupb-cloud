@@ -1,7 +1,7 @@
-package com.gupb.admin.repository.system;
+package com.gupb.seller.repository.system;
 
 
-import com.gupb.admin.model.system.DataMaster;
+import com.gupb.seller.model.system.DataMaster;
 import org.apache.ibatis.annotations.Param;
 import org.mapstruct.Mapper;
 
