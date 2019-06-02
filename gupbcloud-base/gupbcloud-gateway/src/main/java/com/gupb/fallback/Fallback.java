@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.alibaba.fastjson.JSON;
-import com.gupb.page.HttpJsonResult;
+import com.gupb.page.WrapMapperResult;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
@@ -65,7 +65,7 @@ public class Fallback implements FallbackProvider {
 	}
 
 	private String setResponseBody(String route) {
-		HttpJsonResult<T> result = new HttpJsonResult<T>();
+		WrapMapperResult<T> result = new WrapMapperResult<T>();
 		result.setMessage("网关服务器调用为服务异常");
 		result.setCode("200");
 

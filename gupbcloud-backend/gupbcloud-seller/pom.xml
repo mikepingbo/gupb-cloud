@@ -16,6 +16,14 @@
     <name>gupbcloud-seller</name>
     <url>http://maven.apache.org</url>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.gupb</groupId>
+            <artifactId>gupbcloud-backend-admin-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <build>
 		<finalName>gupbcloud-seller</finalName>
         <plugins>

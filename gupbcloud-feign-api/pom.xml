@@ -17,6 +17,14 @@
     <name>gupbcloud-feign-api</name>
     <url>http://maven.apache.org</url>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.gupb</groupId>
+            <artifactId>gupbcloud-util</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <modules>
         <module>gupbcloud-backend-admin-api</module>
         <module>gupbcloud-backend-seller-api</module>

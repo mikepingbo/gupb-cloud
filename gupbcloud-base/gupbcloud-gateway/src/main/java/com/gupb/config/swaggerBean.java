@@ -31,9 +31,9 @@ public class swaggerBean {
         @Override
         public List<SwaggerResource> get() {
             List resources = new ArrayList();
-            resources.add(swaggerResource("SSO单点登录系统","/api/sso/v2/api-docs","2.0"));
-    //            resources.add(swaggerResource("SSO单点登录系统","/api/sso/v2/api-docs","2.0"));
-    //            resources.add(swaggerResource("SSO单点登录系统","/api/sso/v2/api-docs","2.0"));
+            resources.add(swaggerResource("SSO单点登录系统","/gupb/sso/v2/api-docs","2.0"));
+                resources.add(swaggerResource("Admin管理系统","/gupb/admin/v2/api-docs","2.0"));
+                resources.add(swaggerResource("Seller管理系统","/gupb/seller/v2/api-docs","2.0"));
 
 
             return resources;
