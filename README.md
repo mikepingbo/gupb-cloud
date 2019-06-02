@@ -1,14 +1,14 @@
 ### Project Name：gupb-cloud（Ongoing）
 > gupbcloud-base
-> >  	gupbcloud-erueka
-> >  	gupbcloud-config
-> >  	gupbcloud-zipkin
-> >  	gupbcloud-hystrix-dashboard
+> >  	gupbcloud-erueka  架构完成
+> >  	gupbcloud-config  架构完成
+> >  	gupbcloud-zipkin  架构完成
+> >  	gupbcloud-hystrix-dashboard  架构完成
 > >  	gupbcloud-admin
-> >  	gupbcloud-gateway
+> >  	gupbcloud-gateway 架构完成
 > >  	gupbcloud-apollo
 > gupbcloud-customer
-> > 	gupbcloud-sso
+> > 	gupbcloud-sso 进行中
 > > 	gupbcloud-member
 > > 	gupbcloud-search
 > > 	gupbcloud-seller
@@ -21,8 +21,8 @@
 > > 	gupbcloud-third
 > > 	gupbcloud-util
 > gupbcloud-backend
-> > 	gupbcloud-admin
-> > 	gupbcloud-seller
+> > 	gupbcloud-admin  架构完成一部分
+> > 	gupbcloud-seller  架构完成一部分
 > > 	gupbcloud-schedule
 > gupbcloud-other-service
 > > 	gupbcloud-other1
@@ -38,11 +38,11 @@
 > > 	gupbcloud-es
 > > 	gupbcloud-redis
 > > 	gupbcloud-feign
-> > 	gupbcloud-util
+> > 	gupbcloud-util 架构进行中
 > gupbcloud-feign-api
-> > 	gupbcloud-backend-admin-api
-> > 	gupbcloud-backend-seller-api
-> > 	gupbcloud-backend-sso-api
+> > 	gupbcloud-backend-admin-api  架构完成一部分
+> > 	gupbcloud-backend-seller-api  架构完成一部分
+> > 	gupbcloud-backend-sso-api  架构完成一部分
 > > 	gupbcloud-backend-member-api
 > > 	gupbcloud-backend-search-api
 > > 	gupbcloud-backend-seller-api
@@ -62,7 +62,7 @@
 > > 	gupbcloud-gitlib
 > > 	gupbcloud-jenkins
 > > 	gupbcloud-zentao 禅道
-> > 	gupbcloud-swagger
+> > 	gupbcloud-swagger    架构已完成
 > > 	gupbcloud-maven
 > > 	gupbcloud-idea
 > > 	gupbcloud-xsell
