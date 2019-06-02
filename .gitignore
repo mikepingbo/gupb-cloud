@@ -3,5 +3,16 @@
 *.iml
 *.ipr
 *.iws
-*/target/*
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/target
+/.settings
+/.classpath
+/.project
+
 out
