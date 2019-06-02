@@ -1,13 +1,12 @@
 ### 项目名称：gupb-cloud
 > gupbcloud-base
->
-> > gupbcloud-erueka
-> > gupbcloud-config
-> > gupbcloud-zipkin
-> > gupbcloud-hystrix-dashboard
-> > gupbcloud-admin
-> > gupbcloud-gateway
-> > gupbcloud-apollo
+> >  gupbcloud-erueka
+> >  gupbcloud-config
+> >  gupbcloud-zipkin
+> >  gupbcloud-hystrix-dashboard
+> >  gupbcloud-admin
+> >  gupbcloud-gateway
+> >  gupbcloud-apollo
 > gupbcloud-customer
 > > 	gupbcloud-sso
 > > 	gupbcloud-member
