@@ -3,6 +3,7 @@ package com.gupb.order.service;
 import com.gupb.account.api.dto.AccountDTO;
 import com.gupb.account.api.entity.AccountDO;
 import com.gupb.account.feign.AccountFeignApi;
+import com.gupb.annotation.Gupb;
 import com.gupb.inventory.api.dto.InventoryDTO;
 import com.gupb.inventory.api.entity.InventoryDO;
 import com.gupb.inventory.feign.InventorytFeignApi;
@@ -27,6 +28,7 @@ public class PaymentService {
     @Autowired
     private InventorytFeignApi inventorytFeignApi;
 
+    @Gupb
     public void makePayment(Order order) {
         //检查数据 这里只是demo 只是demo 只是demo
         final WrapMapperResult<AccountDO> accountDOResult = accountFeignApi.findByUserId(order.getUserId());
