@@ -1,8 +1,8 @@
 package com.gupb.admin.feign;
 
 import com.gupb.admin.feign.hystrix.TestFeignHystrix;
-import com.gupb.feign.FeignConfig;
-import com.gupb.page.WrapMapperResult;
+import com.gupb.util.feign.FeignConfig;
+import com.gupb.util.page.WrapMapperResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

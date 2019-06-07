@@ -1,8 +1,8 @@
 package com.gupb.seller.controller.frontend;
 
-import com.gupb.base.BaseController;
-import com.gupb.page.WrapMapperResult;
-import com.gupb.page.WrapMapperUtil;
+import com.gupb.util.base.BaseController;
+import com.gupb.util.page.WrapMapperResult;
+import com.gupb.util.page.WrapMapperUtil;
 import com.gupb.seller.model.system.DataMaster;
 import com.gupb.seller.service.DataMasterService;
 import io.swagger.annotations.Api;

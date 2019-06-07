@@ -2,9 +2,9 @@ package com.gupb.admin.controller.frontend;
 
 import com.gupb.admin.model.system.DataMaster;
 import com.gupb.admin.service.DataMasterService;
-import com.gupb.base.BaseController;
-import com.gupb.page.WrapMapperResult;
-import com.gupb.page.WrapMapperUtil;
+import com.gupb.util.base.BaseController;
+import com.gupb.util.page.WrapMapperResult;
+import com.gupb.util.page.WrapMapperUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

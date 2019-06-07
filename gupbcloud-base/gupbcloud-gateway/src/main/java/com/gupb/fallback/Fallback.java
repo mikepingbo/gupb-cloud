@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.alibaba.fastjson.JSON;
-import com.gupb.page.WrapMapperResult;
+import com.gupb.util.page.WrapMapperResult;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;

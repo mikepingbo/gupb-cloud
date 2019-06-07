@@ -1,8 +1,8 @@
 package com.gupb.admin.feign.hystrix;
 
 import com.gupb.admin.feign.TestFeignApi;
-import com.gupb.page.WrapMapperResult;
-import com.gupb.page.WrapMapperUtil;
+import com.gupb.util.page.WrapMapperResult;
+import com.gupb.util.page.WrapMapperUtil;
 import org.springframework.stereotype.Component;
 
 @Component

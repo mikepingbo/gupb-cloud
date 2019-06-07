@@ -29,5 +29,8 @@
         <module>gupbcloud-backend-admin-api</module>
         <module>gupbcloud-backend-seller-api</module>
         <module>gupbcloud-customer-sso-api</module>
+        <module>gupbcloud-customer-order-api</module>
+        <module>gupbcloud-customer-account-api</module>
+        <module>gupbcloud-customer-inventory-api</module>
     </modules>
 </project>

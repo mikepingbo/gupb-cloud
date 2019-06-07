@@ -1,0 +1,16 @@
+事务方案
+order     pay         inventory
+
+order事务处理完成之后，调用另一个方法，执行pay和inventory事务
+
+在pay的方法上面加注释@gupb，这个注释是AOP注释，在方法进入前和后先后进入切面方法
+
+进入pay方法前，需要执行的事情
+1、保存事务数据库
+
+pay方法执行后，进入aop
+1、发送MQ
+
+在执行pay方法时，调用feign的pay微服务需要传递header，header中需要带事务信息，
+事务ID  事务状态  等等
+

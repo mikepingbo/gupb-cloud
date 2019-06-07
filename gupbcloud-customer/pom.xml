@@ -27,6 +27,11 @@
 
     <modules>
         <module>gupbcloud-sso</module>
+        <module>gupbcloud-order</module>
+        <module>gupbcloud-inventory</module>
+        <module>gupbcloud-account</module>
+        <module>gupbcloud-account-api</module>
+        <module>gupbcloud-inventory-api</module>
     </modules>
 
     <dependencies>

@@ -19,5 +19,7 @@
 
     <modules>
         <module>gupbcloud-util</module>
+        <module>gupbcloud-rocketmq</module>
+        <module>gupbcloud-core</module>
     </modules>
 </project>
