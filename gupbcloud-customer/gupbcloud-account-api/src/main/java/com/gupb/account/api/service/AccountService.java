@@ -1,4 +1,4 @@
-package com.gupb.account.service;
+package com.gupb.account.api.service;
 
 import com.gupb.account.api.dto.AccountDTO;
 import com.gupb.account.api.entity.AccountDO;
@@ -16,6 +16,9 @@ public class AccountService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountService.class);
 
 //    private AccountMapper accountMapper;
+
+//    @Autowired
+//    private GupbMqSendService gupbMqSendService;
 
     /**
      * 扣款支付
@@ -36,6 +39,12 @@ public class AccountService {
 //        if (update != 1) {
 //            throw new GupbRuntimeException("spring cloud account-service 资金不足！");
 //        }
+
+        String destination = "inventory, inventory";
+        final byte[] message = "bbb".getBytes();
+
+//        gupbMqSendService.sendMessage(destination, null, message);
+
         return Boolean.TRUE;
     }
 

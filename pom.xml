@@ -84,19 +84,25 @@
         </dependency>
         <!-- RocketMQ 客户端相关依赖 -->
         <dependency>
-            <groupId>org.apache.rocketmq</groupId>
+            <groupId>com.alibaba.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
-            <version>${rocketmq.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-common</artifactId>
-            <version>${rocketmq.version}</version>
+            <version>3.2.6</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.gupb</groupId>
+            <artifactId>gupbcloud-util</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

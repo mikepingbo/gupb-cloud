@@ -1,5 +1,6 @@
 package com.gupb.inventory.feign;
 
+import com.gupb.annotation.Gupb;
 import com.gupb.inventory.api.dto.InventoryDTO;
 import com.gupb.inventory.api.entity.InventoryDO;
 import com.gupb.inventory.feign.hystrix.InventoryFeignHystrix;
@@ -14,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "gupbcloud-inventory", configuration = FeignConfig.class, fallback = InventoryFeignHystrix.class)
 public interface InventorytFeignApi {
 
+    @Gupb(destination = "inventory, inventory")
     @RequestMapping(value = "/inventory/decrease", method = RequestMethod.POST)
     WrapMapperResult<Boolean> decrease(@RequestBody InventoryDTO inventoryDTO);
-
 
     @RequestMapping(value = "/inventory/findByProductId", method = RequestMethod.GET)
     WrapMapperResult<InventoryDO> findByProductId(@RequestParam("productId") String productId);

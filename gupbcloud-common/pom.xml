@@ -22,5 +22,6 @@
         <module>gupbcloud-rocketmq</module>
         <module>gupbcloud-core</module>
         <module>gupbcloud-annotation</module>
+        <module>gupbcloud-rpc</module>
     </modules>
 </project>

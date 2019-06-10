@@ -3,6 +3,7 @@ package com.gupb.order.service;
 import com.gupb.order.entity.Order;
 import com.gupb.order.enums.OrderStatusEnum;
 import com.gupb.util.IdWorkerUtils;
+import com.gupb.util.mq.MessageEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

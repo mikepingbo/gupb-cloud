@@ -1,18 +1,24 @@
 package com.gupb.order.service;
 
+import com.alibaba.fastjson.serializer.ObjectSerializer;
 import com.gupb.account.api.dto.AccountDTO;
 import com.gupb.account.api.entity.AccountDO;
 import com.gupb.account.feign.AccountFeignApi;
 import com.gupb.annotation.Gupb;
+import com.gupb.core.recketmq.GupbMqSendService;
 import com.gupb.inventory.api.dto.InventoryDTO;
 import com.gupb.inventory.api.entity.InventoryDO;
 import com.gupb.inventory.feign.InventorytFeignApi;
 import com.gupb.order.entity.Order;
 import com.gupb.order.enums.OrderStatusEnum;
+import com.gupb.util.entity.GupbTransaction;
 import com.gupb.util.exception.GupbRuntimeException;
 import com.gupb.util.page.WrapMapperResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.math.BigDecimal;
 
 /**
  * The type Payment service.
@@ -28,7 +34,7 @@ public class PaymentService {
     @Autowired
     private InventorytFeignApi inventorytFeignApi;
 
-    @Gupb
+//    @Gupb(destination = "account, account")
     public void makePayment(Order order) {
         //检查数据 这里只是demo 只是demo 只是demo
         final WrapMapperResult<AccountDO> accountDOResult = accountFeignApi.findByUserId(order.getUserId());
@@ -55,15 +61,14 @@ public class PaymentService {
 //        orderMapper.update(order);
         // 扣除用户余额
         AccountDTO accountDTO = new AccountDTO();
-        accountDTO.setAmount(order.getTotalAmount());
-        accountDTO.setUserId(order.getUserId());
+        accountDTO.setAmount(order.getTotalAmount() == null ? BigDecimal.valueOf(1) : order.getTotalAmount());
+        accountDTO.setUserId(StringUtils.isEmpty(order.getUserId()) ? "system" : order.getUserId());
         accountFeignApi.payment(accountDTO);
 
         // 进入扣减库存操作
         InventoryDTO inventoryDTO = new InventoryDTO();
-        inventoryDTO.setCount(order.getCount());
-        inventoryDTO.setProductId(order.getProductId());
+        inventoryDTO.setCount(order.getCount() == null ? 100 : order.getCount());
+        inventoryDTO.setProductId(StringUtils.isEmpty(order.getProductId()) ? "system" : order.getProductId());
         inventorytFeignApi.decrease(inventoryDTO);
     }
-
 }
