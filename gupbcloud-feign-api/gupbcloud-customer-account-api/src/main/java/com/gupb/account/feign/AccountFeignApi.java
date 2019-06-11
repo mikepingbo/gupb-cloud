@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "gupbcloud-account", configuration = FeignConfig.class, fallback = AccountFeignHystrix.class)
+@FeignClient(value = "gupbcloud-account", fallback = AccountFeignHystrix.class)
 public interface AccountFeignApi {
 
     @Gupb(destination = "account, account", target = AccountService.class)
