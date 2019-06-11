@@ -1,5 +1,8 @@
-package com.gupb.inventory.mq;
+package com.gupb.mq;
 
+import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
+import com.alibaba.rocketmq.client.exception.MQClientException;
+import com.alibaba.rocketmq.common.consumer.ConsumeFromWhere;
 import com.gupb.recketmq.enums.RocketMQErrorEnum;
 import com.gupb.recketmq.exception.RocketMQException;
 import org.slf4j.Logger;
@@ -8,12 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.util.StringUtils;
-
-import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
-import com.alibaba.rocketmq.client.exception.MQClientException;
-import com.alibaba.rocketmq.common.consumer.ConsumeFromWhere;
 
 @SpringBootConfiguration
 public class MQConsumerConfiguration {
@@ -30,6 +28,7 @@ public class MQConsumerConfiguration {
     private String topics;
     @Value("${rocketmq.consumer.consumeMessageBatchMaxSize}")
     private int consumeMessageBatchMaxSize;
+
     @Autowired
     private MQConsumeMsgListenerProcessor mqMessageListenerProcessor;
 

@@ -1,4 +1,4 @@
-package com.gupb.account.mq;
+package com.gupb.mq;
 
 import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -43,17 +43,17 @@ public class MQConsumeMsgListenerProcessor implements MessageListenerConcurrentl
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
 
-                // TODO 以下代码需要提出去
-                final byte[] message = messageExt.getBody();
-                GupbInvocation gupbInvocation = (GupbInvocation) MainSerializer.checkObject(message);
-                final Class clazz = gupbInvocation.getTargetClass();
-                final String method = gupbInvocation.getMethodName();
-                final Object[] args = gupbInvocation.getArgs();
-                final Class[] parameterTypes = gupbInvocation.getParameterTypes();
-                final Object bean = SpringBeanUtils.getInstance().getBean(clazz);
-
                 //TODO 处理对应的业务逻辑
                 try {
+                    // TODO 以下代码需要提出去
+                    final byte[] message = messageExt.getBody();
+                    GupbInvocation gupbInvocation = (GupbInvocation) MainSerializer.checkObject(message);
+                    final Class clazz = gupbInvocation.getTargetClass();
+                    final String method = gupbInvocation.getMethodName();
+                    final Object[] args = gupbInvocation.getArgs();
+                    final Class[] parameterTypes = gupbInvocation.getParameterTypes();
+                    final Object bean = SpringBeanUtils.getInstance().getBean(clazz);
+
                     MethodUtils.invokeMethod(bean, method, args, parameterTypes);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();

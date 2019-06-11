@@ -2,7 +2,7 @@ package com.gupb.rpc.feign;
 
 import com.gupb.annotation.Gupb;
 import com.gupb.core.concurrent.threadlocal.TransactionContextLocal;
-import com.gupb.core.recketmq.GupbMqSendService;
+import com.gupb.util.DefaultValueUtils;
 import com.gupb.util.entity.GupbInvocation;
 
 import java.lang.reflect.InvocationHandler;
@@ -18,8 +18,6 @@ public class GupbFeignHandler implements InvocationHandler {
 
     private InvocationHandler delegate;
 
-    private GupbMqSendService gupbMqSendService;
-
     @Override
     public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
         if (Object.class.equals(method.getDeclaringClass())) {
@@ -31,27 +29,12 @@ public class GupbFeignHandler implements InvocationHandler {
             }
             try {
                 final GupbInvocation participant = buildParticipant(gupb, method, args);
-
-                final Class targetClass = gupb.target();
-                final String methodName = method.getName();
-                final Class[] parameterTypes = method.getParameterTypes();
-
-                // TODO 简单处理，需要提取出去
-                GupbInvocation gupbInvocation = new GupbInvocation();
-                gupbInvocation.setTargetClass(targetClass);
-                gupbInvocation.setMethodName(methodName);
-                gupbInvocation.setParameterTypes(parameterTypes);
-                gupbInvocation.setArgs(args);
-
-                TransactionContextLocal.getInstance().set(gupbInvocation);
+                TransactionContextLocal.getInstance().set(participant);
 
                 return this.delegate.invoke(proxy, method, args);
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
-                // TODO 返回默认值未处理
-//                return DefaultValueUtils.getDefaultValue(method.getReturnType());
-
-                return null;
+                return DefaultValueUtils.getDefaultValue(method.getReturnType());
             }
         }
     }
