@@ -15,15 +15,4 @@
 
     <name>gupbcloud-util</name>
     <url>http://maven.apache.org</url>
-
-    <properties>
-        <version-fastjson>1.2.3</version-fastjson>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-    </dependencies>
 </project>

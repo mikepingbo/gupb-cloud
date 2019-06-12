@@ -13,18 +13,15 @@ import java.math.BigDecimal;
 
 @Api("Order服务订单接口类")
 @RestController
-@RequestMapping("/order")
 public class OrderController {
 
     @Autowired
     private OrderService orderService;
 
-    @PostMapping(value = "/orderPay")
+    @PostMapping(value = "/pay")
     @ApiOperation(value = "订单支付接口（注意这里模拟的是创建订单并进行支付扣减库存等操作）")
     public String orderPay(@RequestParam(value = "count") Integer count,
                            @RequestParam(value = "amount") BigDecimal amount) {
         return orderService.orderPay(count, amount);
     }
-
-
 }

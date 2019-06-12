@@ -15,8 +15,11 @@
 
     <name>gupbcloud-customer-order-api</name>
     <url>http://maven.apache.org</url>
-
-    <properties>
-        <version-fastjson>1.2.3</version-fastjson>
-    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.gupb</groupId>
+            <artifactId>gupbcloud-util</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
