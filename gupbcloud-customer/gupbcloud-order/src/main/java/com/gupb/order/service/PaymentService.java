@@ -37,27 +37,28 @@ public class PaymentService {
 //    @Gupb(destination = "account, account")
     public void makePayment(Order order) {
         //检查数据 这里只是demo 只是demo 只是demo
-        final WrapMapperResult<AccountDO> accountDOResult = accountFeignApi.findByUserId(order.getUserId());
-
-        if (accountDOResult == null || !accountDOResult.getSuccess()) {
-            throw new GupbRuntimeException("服务异常");
-        }
-        AccountDO accountDO = accountDOResult.getData();
-        if (accountDO != null && accountDO.getBalance().compareTo(order.getTotalAmount()) <= 0) {
-            throw new GupbRuntimeException("余额不足！");
-        }
-
-        final WrapMapperResult<InventoryDO> inventoryDOResult = inventorytFeignApi.findByProductId(order.getProductId());
-
-        if (inventoryDOResult == null || !inventoryDOResult.getSuccess()) {
-            throw new GupbRuntimeException("服务异常");
-        }
-        InventoryDO inventoryDO = inventoryDOResult.getData();
-        if (inventoryDO != null && inventoryDO.getTotalInventory() < order.getCount()) {
-            throw new GupbRuntimeException("库存不足！");
-        }
-
-        order.setStatus(OrderStatusEnum.PAY_SUCCESS.getCode());
+//        order.setUserId("aaa");
+//        final WrapMapperResult<AccountDO> accountDOResult = accountFeignApi.findByUserId(order.getUserId());
+//
+//        if (accountDOResult == null || !accountDOResult.getSuccess()) {
+//            throw new GupbRuntimeException("服务异常");
+//        }
+//        AccountDO accountDO = accountDOResult.getData();
+//        if (accountDO != null && accountDO.getBalance().compareTo(order.getTotalAmount()) <= 0) {
+//            throw new GupbRuntimeException("余额不足！");
+//        }
+//
+//        final WrapMapperResult<InventoryDO> inventoryDOResult = inventorytFeignApi.findByProductId(order.getProductId());
+//
+//        if (inventoryDOResult == null || !inventoryDOResult.getSuccess()) {
+//            throw new GupbRuntimeException("服务异常");
+//        }
+//        InventoryDO inventoryDO = inventoryDOResult.getData();
+//        if (inventoryDO != null && inventoryDO.getTotalInventory() < order.getCount()) {
+//            throw new GupbRuntimeException("库存不足！");
+//        }
+//
+//        order.setStatus(OrderStatusEnum.PAY_SUCCESS.getCode());
 //        orderMapper.update(order);
         // 扣除用户余额
         AccountDTO accountDTO = new AccountDTO();
