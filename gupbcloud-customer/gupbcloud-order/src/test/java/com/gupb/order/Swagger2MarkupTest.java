@@ -22,8 +22,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * @author ChaselX
- * @date 2019/1/29 13:02
+ * @author gupb
+ *
+ * @date 2019/6/12 20:20
  */
 @WebAppConfiguration
 @RunWith(SpringRunner.class)

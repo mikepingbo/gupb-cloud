@@ -21,6 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
+        <!--about swagger2-->
         <swagger2markup.version>1.2.0</swagger2markup.version>
         <asciidoctor.input.directory>${project.basedir}/src/docs/asciidoc</asciidoctor.input.directory>
         <swagger.output.dir>${project.build.directory}/swagger</swagger.output.dir>
@@ -29,9 +30,8 @@
         <asciidoctor.html.output.directory>${project.build.directory}/asciidoc/html</asciidoctor.html.output.directory>
         <asciidoctor.pdf.output.directory>${project.build.directory}/asciidoc/pdf</asciidoctor.pdf.output.directory>
         <swagger.input>${swagger.output.dir}/swagger.json</swagger.input>
-        <springfox.version>2.9.2</springfox.version>
     </properties>
-
+    <!--about swagger2-->
     <pluginRepositories>
         <pluginRepository>
             <id>jcenter-snapshots</id>
@@ -47,7 +47,7 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
+    <!--about swagger2-->
     <repositories>
         <repository>
             <id>jcentral</id>
@@ -76,7 +76,9 @@
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+    <!--about swagger2-->
     <build>
+        <finalName>gupbcloud-order</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

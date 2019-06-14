@@ -1,6 +1,5 @@
 package com.gupb.order.config;
 
-import com.google.common.base.Predicates;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
@@ -14,11 +13,10 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import static springfox.documentation.builders.PathSelectors.ant;
-
 /**
- * @author ChaselX
- * @date 2019/1/30 11:22
+ * @author gupb
+ *
+ * @date 2019/6/12 20:20
  */
 @Configuration
 @EnableSwagger2
@@ -38,10 +36,10 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("API Document")
-                .description("API Document for Spring Boot 2 Project")
-                .contact(new Contact("ChaselX", "", ""))
-                .version("1.0")
+                .title("Order API Document For Customer")
+                .description("Order API Document for Spring Boot 2 Project")
+                .contact(new Contact("Gupb", "", "176826313@qq.com"))
+                .version("2.0")
                 .build();
     }
 }

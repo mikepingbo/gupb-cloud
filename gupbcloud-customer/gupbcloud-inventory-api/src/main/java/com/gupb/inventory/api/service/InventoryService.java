@@ -1,4 +1,4 @@
-package com.gupb.inventory.service;
+package com.gupb.inventory.api.service;
 
 import com.gupb.inventory.api.dto.InventoryDTO;
 import com.gupb.inventory.api.entity.InventoryDO;

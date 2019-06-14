@@ -2,8 +2,8 @@ package com.gupb.inventory.controller.rpc;
 
 import com.gupb.inventory.api.dto.InventoryDTO;
 import com.gupb.inventory.api.entity.InventoryDO;
+import com.gupb.inventory.api.service.InventoryService;
 import com.gupb.inventory.feign.InventorytFeignApi;
-import com.gupb.inventory.service.InventoryService;
 import com.gupb.util.base.BaseController;
 import com.gupb.util.page.WrapMapperResult;
 import com.gupb.util.page.WrapMapperUtil;

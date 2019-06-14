@@ -65,6 +65,6 @@
 > > 	gupbcloud-swagger    架构已完成
 > > 	gupbcloud-maven
 > > 	gupbcloud-idea
-> > 	gupbcloud-xsell
+> > 	gupbcloud-xsell-secureCRT
 > > 	gupbcloud-sqlyong
 > > 	gupbcloud-mybatis
