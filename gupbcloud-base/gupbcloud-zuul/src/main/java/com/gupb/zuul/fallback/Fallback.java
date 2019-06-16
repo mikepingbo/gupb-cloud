@@ -1,4 +1,4 @@
-package com.gupb.fallback;
+package com.gupb.zuul.fallback;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

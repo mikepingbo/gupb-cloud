@@ -29,6 +29,7 @@ public class AccountService {
     @Transactional(rollbackFor = Exception.class)
     public boolean payment(AccountDTO accountDTO) {
         LOGGER.info("============springcloud执行付款接口===============");
+        LOGGER.info(accountDTO.getUserId());
 //        final AccountDO accountDO = accountMapper.findByUserId(accountDTO.getUserId());
 //        if (accountDO.getBalance().compareTo(accountDTO.getAmount()) <= 0) {
 //            throw new GupbRuntimeException("spring cloud account-service 资金不足！");

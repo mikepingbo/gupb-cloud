@@ -1,4 +1,4 @@
-package com.gupb.config;
+package com.gupb.zuul.config;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-public class swaggerBean {
+public class SwaggerBean {
 
     @Component
     @Primary

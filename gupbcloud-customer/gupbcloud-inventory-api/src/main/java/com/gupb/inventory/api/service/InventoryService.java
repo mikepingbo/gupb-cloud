@@ -27,6 +27,7 @@ public class InventoryService {
     @Transactional(rollbackFor = Exception.class)
     public Boolean decrease(InventoryDTO inventoryDTO) {
         LOGGER.info("==========springcloud调用扣减库存decrease===========");
+        LOGGER.info(inventoryDTO.getProductId());
 //        final InventoryDO entity = inventoryMapper.findByProductId(inventoryDTO.getProductId());
 //
 //        if (entity.getTotalInventory() < inventoryDTO.getCount()) {
