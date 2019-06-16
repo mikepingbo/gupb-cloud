@@ -5,8 +5,8 @@
 > >  	gupbcloud-zipkin  架构完成
 > >  	gupbcloud-hystrix-dashboard  架构完成
 > >  	gupbcloud-admin
-> >  	gupbcloud-zull 架构完成 基于netfix1.x
-> >  	gupbcloud-gateway 架构完成 基于springcloud原生
+> >  	gupbcloud-zull 架构完成 基于netfix1.x (webmvc)
+> >  	gupbcloud-gateway 架构完成 基于springcloud原生 (webflux)
 > >  	gupbcloud-apollo 架构已添加  架构修改过，适应此工程
 > gupbcloud-customer
 > > 	gupbcloud-sso 未开始
