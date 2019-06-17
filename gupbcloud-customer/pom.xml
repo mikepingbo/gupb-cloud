@@ -29,6 +29,7 @@
         <module>gupbcloud-order</module>
         <module>gupbcloud-inventory</module>
         <module>gupbcloud-account</module>
+        <module>gupbcloud-search</module>
         <module>gupbcloud-account-api</module>
         <module>gupbcloud-inventory-api</module>
     </modules>
