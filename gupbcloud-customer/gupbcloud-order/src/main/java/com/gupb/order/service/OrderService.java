@@ -2,13 +2,18 @@ package com.gupb.order.service;
 
 import com.gupb.order.entity.Order;
 import com.gupb.order.enums.OrderStatusEnum;
+import com.gupb.redis.service.RedisUtils;
 import com.gupb.util.IdWorkerUtils;
 import com.gupb.util.mq.MessageEntity;
+import io.lettuce.core.output.ScanOutput;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -17,6 +22,9 @@ public class OrderService {
 
     @Autowired
     private PaymentService paymentService;
+
+    @Autowired
+    private RedisUtils redisUtils;
 
     /**
      * logger.
@@ -31,8 +39,20 @@ public class OrderService {
             paymentService.makePayment(order);
 //        }
 
+        redisUtils.setStringA("gupba", "gupba");
+        redisUtils.setStringB("gupbb", "gupbb");
 
+        System.out.println(redisUtils.getStringA("gupba"));
+        System.out.println(redisUtils.getStringA("gupbb"));
         return "success";
+    }
+
+    public void test() {
+        redisUtils.setStringA("gupba", "gupba");
+        redisUtils.setStringB("gupbb", "gupbb");
+
+        System.out.println(redisUtils.getStringA("gupba"));
+        System.out.println(redisUtils.getStringA("gupbb"));
     }
 
     private Order buildOrder(Integer count, BigDecimal amount) {

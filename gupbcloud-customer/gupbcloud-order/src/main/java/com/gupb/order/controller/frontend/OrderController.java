@@ -24,4 +24,12 @@ public class OrderController {
                            @RequestParam(value = "amount") BigDecimal amount) {
         return orderService.orderPay(count, amount);
     }
+
+    @PostMapping(value = "/test")
+    @ApiOperation(value = "测试Redis接口")
+    public String test() {
+        orderService.test();
+
+        return "sucess";
+    }
 }
