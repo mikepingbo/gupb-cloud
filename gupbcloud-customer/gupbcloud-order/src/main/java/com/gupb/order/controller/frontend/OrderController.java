@@ -4,10 +4,7 @@ import com.gupb.order.service.OrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 
@@ -25,10 +22,18 @@ public class OrderController {
         return orderService.orderPay(count, amount);
     }
 
-    @PostMapping(value = "/test")
-    @ApiOperation(value = "测试Redis接口")
-    public String test() {
-        orderService.test();
+    @GetMapping(value = "/test1")
+    @ApiOperation(value = "测试Redis接口set")
+    public String test1() {
+        orderService.test1();
+
+        return "sucess";
+    }
+
+    @GetMapping(value = "/test2")
+    @ApiOperation(value = "测试Redis接口get")
+    public String test2(@RequestParam(value = "key") String key) {
+        orderService.test2(key);
 
         return "sucess";
     }
