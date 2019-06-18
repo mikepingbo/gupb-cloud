@@ -1,4 +1,4 @@
-package com.gupb.search.repository.product;
+package com.gupb.search.repositoryes;
 
 import com.gupb.search.entity.EsProduct;
 import org.springframework.data.domain.Page;

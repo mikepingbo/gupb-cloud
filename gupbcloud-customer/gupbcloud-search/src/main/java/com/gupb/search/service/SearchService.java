@@ -1,7 +1,7 @@
 package com.gupb.search.service;
 
 import com.gupb.search.entity.EsProduct;
-import com.gupb.search.repository.product.EsProductRepository;
+import com.gupb.search.repositoryes.EsProductRepository;
 import com.gupb.search.repository.product.SearchProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -33,12 +33,12 @@ public class SearchService {
     public int importAll() {
         List<EsProduct> esProductList = searchProductRepository.getAllEsProductList(null);
         Iterable<EsProduct> esProductIterable = esProductRepository.saveAll(esProductList);
-//        Iterator<EsProduct> iterator = esProductIterable.iterator();
+        Iterator<EsProduct> iterator = esProductIterable.iterator();
         int result = 0;
-//        while (iterator.hasNext()) {
-//            result++;
-//            iterator.next();
-//        }
+        while (iterator.hasNext()) {
+            result++;
+            iterator.next();
+        }
         return result;
     }
 
