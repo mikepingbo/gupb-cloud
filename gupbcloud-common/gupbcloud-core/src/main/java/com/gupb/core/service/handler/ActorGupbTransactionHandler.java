@@ -64,6 +64,7 @@ public class ActorGupbTransactionHandler implements GupbTransactionHandler {
                         String sendDestination = gupbParticipant.getDestination();
                         final byte[] message = MainSerializer.toByteArray(gupbParticipant);
                         // TODO 发送MQ逻辑先简单写一下，需要考虑高并发情况
+                        // TODO 需要考虑方式失败，需要持久化处理
                         gupbMqSendService.sendMessage(sendDestination, null, message);
                     }
                 }
