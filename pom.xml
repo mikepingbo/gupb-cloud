@@ -18,6 +18,8 @@
         <!--about swagger2-->
         <swagger2markup.version>1.2.0</swagger2markup.version>
         <springfox.version>2.9.2</springfox.version>
+
+        <gson.verions>2.6.2</gson.verions>
     </properties>
 
     <!-- spring boot版本 -->
@@ -43,6 +45,11 @@
         <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.verions}</version>
         </dependency>
     </dependencies>
 

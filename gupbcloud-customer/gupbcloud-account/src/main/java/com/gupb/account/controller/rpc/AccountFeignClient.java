@@ -32,6 +32,7 @@ public class AccountFeignClient extends BaseController implements AccountFeignAp
         Boolean result = accountService.payment(accountDO);
         System.out.println(servletRequest.getHeader("token"));
         System.out.println(servletRequest.getHeader("Cookie"));
+        System.out.println(servletRequest.getHeader("GUPB_TRANSACTION_CONTEXT"));
 
         return WrapMapperUtil.success(result);
     }

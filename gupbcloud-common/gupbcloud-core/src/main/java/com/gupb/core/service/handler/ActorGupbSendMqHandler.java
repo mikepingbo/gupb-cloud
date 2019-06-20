@@ -5,18 +5,16 @@ import com.gupb.annotation.ModelTypeEnum;
 import com.gupb.core.concurrent.threadlocal.TransactionContextLocal;
 import com.gupb.core.concurrent.threadpool.TransactionContextPool;
 import com.gupb.core.recketmq.GupbMqSendService;
+import com.gupb.core.service.GupbMqSendReceiveService;
 import com.gupb.core.service.GupbTransactionHandler;
-import com.gupb.util.entity.GupbInvocation;
 import com.gupb.util.entity.GupbParticipant;
 import com.gupb.util.entity.GupbTransaction;
-import com.gupb.util.serializer.MainSerializer;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -27,12 +25,12 @@ import java.util.List;
  * @author gupb(Gupb)
  */
 @Component
-public class ActorGupbTransactionHandler implements GupbTransactionHandler {
+public class ActorGupbSendMqHandler implements GupbMqSendReceiveService {
 
     /**
      * logger.
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(ActorGupbTransactionHandler.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ActorGupbSendMqHandler.class);
 
     /**
      * save MythTransaction in threadLocal.
@@ -53,25 +51,26 @@ public class ActorGupbTransactionHandler implements GupbTransactionHandler {
             MethodSignature sign = (MethodSignature)joinPoint.getSignature();
             Method method = sign.getMethod();
             Gupb gupb = method.getAnnotation(Gupb.class);
+            String destination = gupb.destination();
             ModelTypeEnum model = gupb.model();
-            GupbTransaction gupbTransaction = TransactionContextPool.getInstance().get();
 
-            if ("service".equals(model.getDesc()) && gupbTransaction != null && gupbTransaction.getGupbParticipants() != null) {
+            GupbTransaction gupbTransaction = TransactionContextPool.getInstance().get();
+            if ("service".equals(model.getDesc())) {
+                TransactionContextPool.getInstance().remove();
+                TransactionContextLocal.getInstance().remove();
+            } else if (gupbTransaction != null && gupbTransaction.getGupbParticipants() != null) {
                 List<GupbParticipant> gupbParticipants = gupbTransaction.getGupbParticipants();
                 for (GupbParticipant gupbParticipant : gupbParticipants) {
-                    if (gupbParticipant.getSendFlag() == 0) {
-                        String sendDestination = gupbParticipant.getDestination();
-                        final byte[] message = MainSerializer.toByteArray(gupbParticipant);
-                        // TODO 发送MQ逻辑先简单写一下，需要考虑高并发情况
-                        gupbMqSendService.sendMessage(sendDestination, null, message);
+                    if (destination.equals(gupbParticipant.getDestination())) {
+                        gupbParticipant.setSendFlag(0);
                     }
                 }
+                System.out.println(gupbTransaction);
             }
         } catch (Throwable throwable) {
             throw throwable;
         } finally {
-            TransactionContextLocal.getInstance().remove();
-            TransactionContextPool.getInstance().remove();
+//            TransactionContextPool.getInstance().remove();
         }
     }
 }

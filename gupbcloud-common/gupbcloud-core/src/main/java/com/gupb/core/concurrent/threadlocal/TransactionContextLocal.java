@@ -1,7 +1,7 @@
 package com.gupb.core.concurrent.threadlocal;
 
 
-import com.gupb.util.entity.GupbInvocation;
+import com.gupb.util.bean.context.GupbTransactionContext;
 
 /**
  * TransactionContextLocal.
@@ -10,7 +10,7 @@ import com.gupb.util.entity.GupbInvocation;
  */
 public final class TransactionContextLocal {
 
-    private static final ThreadLocal<GupbInvocation> CURRENT_LOCAL = new ThreadLocal<>();
+    private static final ThreadLocal<GupbTransactionContext> CURRENT_LOCAL = new ThreadLocal<>();
 
     private static final TransactionContextLocal TRANSACTION_CONTEXT_LOCAL = new TransactionContextLocal();
 
@@ -31,7 +31,7 @@ public final class TransactionContextLocal {
      *
      * @param context the context
      */
-    public void set(final GupbInvocation context) {
+    public void set(final GupbTransactionContext context) {
         CURRENT_LOCAL.set(context);
     }
 
@@ -40,7 +40,7 @@ public final class TransactionContextLocal {
      *
      * @return the gupb transaction context
      */
-    public GupbInvocation get() {
+    public GupbTransactionContext get() {
         return CURRENT_LOCAL.get();
     }
 

@@ -4,6 +4,7 @@ import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import com.alibaba.rocketmq.common.message.MessageExt;
 import com.gupb.core.helper.SpringBeanUtils;
 import com.gupb.util.entity.GupbInvocation;
+import com.gupb.util.entity.GupbParticipant;
 import com.gupb.util.serializer.MainSerializer;
 import org.apache.commons.lang.reflect.MethodUtils;
 import org.springframework.stereotype.Service;
@@ -25,14 +26,22 @@ public class BusinessServiceImpl implements BusinessService {
 
         // TODO 以下代码需要提出去
         final byte[] message = messageExt.getBody();
-        GupbInvocation gupbInvocation = (GupbInvocation) MainSerializer.checkObject(message);
-        final Class clazz = gupbInvocation.getTargetClass();
-        final String method = gupbInvocation.getMethodName();
-        final Object[] args = gupbInvocation.getArgs();
-        final Class[] parameterTypes = gupbInvocation.getParameterTypes();
-        final Object bean = SpringBeanUtils.getInstance().getBean(clazz);
+        GupbParticipant gupbParticipant = (GupbParticipant) MainSerializer.checkObject(message);
 
-        MethodUtils.invokeMethod(bean, method, args, parameterTypes);
+        GupbInvocation gupbInvocation = null;
+        if (gupbParticipant != null && gupbParticipant.getGupbInvocation() != null) {
+            gupbInvocation = gupbParticipant.getGupbInvocation();
+        }
+
+        if (gupbInvocation != null) {
+            final Class clazz = gupbInvocation.getTargetClass();
+            final String method = gupbInvocation.getMethodName();
+            final Object[] args = gupbInvocation.getArgs();
+            final Class[] parameterTypes = gupbInvocation.getParameterTypes();
+            final Object bean = SpringBeanUtils.getInstance().getBean(clazz);
+
+            MethodUtils.invokeMethod(bean, method, args, parameterTypes);
+        }
 
         return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
     }

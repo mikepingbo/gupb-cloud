@@ -24,6 +24,8 @@ public class GupbParticipant implements Serializable {
 
     private Integer pattern;
 
+    private Integer sendFlag = 1;
+
     private GupbInvocation gupbInvocation;
 
 }

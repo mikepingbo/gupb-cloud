@@ -63,4 +63,6 @@ public @interface Gupb {
      */
     MessageTypeEnum pattern() default MessageTypeEnum.P2P;
 
+
+    ModelTypeEnum model() default ModelTypeEnum.FEIGN;
 }

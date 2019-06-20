@@ -1,6 +1,8 @@
 package com.gupb.rpc.configuration;
 
 import com.gupb.rpc.feign.GupbFeignBeanPostProcessor;
+import com.gupb.rpc.feign.GupbFeignInterceptor;
+import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,6 +13,16 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class GupbFeignConfiguration {
+
+    /**
+     * Request interceptor request interceptor.
+     *
+     * @return the request interceptor
+     */
+    @Bean
+    public RequestInterceptor requestInterceptor() {
+        return new GupbFeignInterceptor();
+    }
 
     /**
      * gupbFeign post processor gupb feign bean post processor.
