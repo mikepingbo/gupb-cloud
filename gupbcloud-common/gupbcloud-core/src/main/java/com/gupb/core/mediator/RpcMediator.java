@@ -9,7 +9,7 @@ import org.apache.commons.lang.StringUtils;
 /**
  * The type RpcMediator.
  *
- * @author xiaoyu(Myth)
+ * @author gupb(Gupb)
  */
 public class RpcMediator {
 
@@ -43,11 +43,11 @@ public class RpcMediator {
      * @return the hmily transaction context
      */
     public GupbTransactionContext acquire(RpcAcquire rpcAcquire) {
-        GupbTransactionContext mythTransactionContext = null;
+        GupbTransactionContext gupbTransactionContext = null;
         final String context = rpcAcquire.acquire(CommonConstant.GUPB_TRANSACTION_CONTEXT);
         if (StringUtils.isNotEmpty(context)) {
-            mythTransactionContext = GsonUtils.getInstance().fromJson(context, GupbTransactionContext.class);
+            gupbTransactionContext = GsonUtils.getInstance().fromJson(context, GupbTransactionContext.class);
         }
-        return mythTransactionContext;
+        return gupbTransactionContext;
     }
 }

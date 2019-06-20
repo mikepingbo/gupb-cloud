@@ -33,7 +33,7 @@ public class ActorGupbSendMqHandler implements GupbMqSendReceiveService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ActorGupbSendMqHandler.class);
 
     /**
-     * save MythTransaction in threadLocal.
+     * save GupbTransaction in threadLocal.
      */
     private static final ThreadLocal<GupbTransaction> CURRENT = new ThreadLocal<>();
 

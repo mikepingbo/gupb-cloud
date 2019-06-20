@@ -17,8 +17,8 @@ public class GupbFeignInterceptor implements RequestInterceptor {
 
     @Override
     public void apply(final RequestTemplate requestTemplate) {
-        final GupbTransactionContext mythTransactionContext = TransactionContextLocal.getInstance().get();
-        RpcMediator.getInstance().transmit(requestTemplate::header, mythTransactionContext);
+        final GupbTransactionContext gupbTransactionContext = TransactionContextLocal.getInstance().get();
+        RpcMediator.getInstance().transmit(requestTemplate::header, gupbTransactionContext);
     }
 
 }

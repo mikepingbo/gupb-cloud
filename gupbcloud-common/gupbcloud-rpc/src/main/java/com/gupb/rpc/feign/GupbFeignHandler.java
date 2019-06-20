@@ -53,7 +53,7 @@ public class GupbFeignHandler implements InvocationHandler {
         GupbParticipant participant;
         if (Objects.nonNull(gupbTransactionContext)) {
             final Class declaringClass = gupb.target();
-            GupbInvocation mythInvocation =
+            GupbInvocation gupbInvocation =
                     new GupbInvocation(declaringClass, method.getName(), method.getParameterTypes(), args);
             final Integer pattern = gupb.pattern().getCode();
             //封装调用点
@@ -61,7 +61,7 @@ public class GupbFeignHandler implements InvocationHandler {
                     gupb.destination(),
                     pattern,
                     1,
-                    mythInvocation);
+                    gupbInvocation);
             return participant;
         }
 

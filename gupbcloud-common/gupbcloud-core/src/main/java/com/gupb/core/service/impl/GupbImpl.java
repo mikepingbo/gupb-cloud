@@ -46,7 +46,7 @@ public class GupbImpl {
         System.out.println("拦截器进入方法之前执行");
         GupbTransaction gupbTransaction = TransactionContextPool.getInstance().get();
         if (gupbTransaction == null) {
-            gupbTransaction = buildMythTransaction(joinPoint, GupbRoleEnum.START.getCode(), GupbStatusEnum.BEGIN.getCode(), "");
+            gupbTransaction = buildGupbTransaction(joinPoint, GupbRoleEnum.START.getCode(), GupbStatusEnum.BEGIN.getCode(), "");
             //设置tcc事务上下文，这个类会传递给远端
             GupbTransactionContext context = new GupbTransactionContext();
             //设置事务id
@@ -79,20 +79,20 @@ public class GupbImpl {
         System.out.println("异常【结束】");
     }
 
-    private GupbTransaction buildMythTransaction(final JoinPoint point, final int role, final int status, final String transId) {
-        GupbTransaction mythTransaction;
+    private GupbTransaction buildGupbTransaction(final JoinPoint point, final int role, final int status, final String transId) {
+        GupbTransaction gupbTransaction;
         if (StringUtils.isNotEmpty(transId)) {
-            mythTransaction = new GupbTransaction(transId);
+            gupbTransaction = new GupbTransaction(transId);
         } else {
-            mythTransaction = new GupbTransaction();
+            gupbTransaction = new GupbTransaction();
         }
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
         Class<?> clazz = point.getTarget().getClass();
-        mythTransaction.setStatus(status);
-        mythTransaction.setRole(role);
-        mythTransaction.setTargetClass(clazz.getName());
-        mythTransaction.setTargetMethod(method.getName());
-        return mythTransaction;
+        gupbTransaction.setStatus(status);
+        gupbTransaction.setRole(role);
+        gupbTransaction.setTargetClass(clazz.getName());
+        gupbTransaction.setTargetMethod(method.getName());
+        return gupbTransaction;
     }
 }

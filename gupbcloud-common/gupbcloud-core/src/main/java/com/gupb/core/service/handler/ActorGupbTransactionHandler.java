@@ -35,7 +35,7 @@ public class ActorGupbTransactionHandler implements GupbTransactionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(ActorGupbTransactionHandler.class);
 
     /**
-     * save MythTransaction in threadLocal.
+     * save GupbTransaction in threadLocal.
      */
     private static final ThreadLocal<GupbTransaction> CURRENT = new ThreadLocal<>();
 
@@ -48,12 +48,13 @@ public class ActorGupbTransactionHandler implements GupbTransactionHandler {
 
     @Override
     public void handler(JoinPoint joinPoint) throws Throwable {
+        ModelTypeEnum model = null;
         try {
             // 获取传入参数内容
             MethodSignature sign = (MethodSignature)joinPoint.getSignature();
             Method method = sign.getMethod();
             Gupb gupb = method.getAnnotation(Gupb.class);
-            ModelTypeEnum model = gupb.model();
+            model = gupb.model();
             GupbTransaction gupbTransaction = TransactionContextPool.getInstance().get();
 
             if ("service".equals(model.getDesc()) && gupbTransaction != null && gupbTransaction.getGupbParticipants() != null) {
@@ -70,8 +71,10 @@ public class ActorGupbTransactionHandler implements GupbTransactionHandler {
         } catch (Throwable throwable) {
             throw throwable;
         } finally {
-            TransactionContextLocal.getInstance().remove();
-            TransactionContextPool.getInstance().remove();
+            if ("service".equals(model.getDesc())) {
+                TransactionContextLocal.getInstance().remove();
+                TransactionContextPool.getInstance().remove();
+            }
         }
     }
 }
