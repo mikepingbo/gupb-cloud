@@ -9,6 +9,8 @@ import reactor.core.publisher.Mono;
  */
 public class HostAddrKeyResolver implements KeyResolver {
 
+    public static final String BEAN_NAME = "hostAddrKeyResolver";
+
     @Override
     public Mono<String> resolve(ServerWebExchange exchange) {
 //        return Mono.just(exchange.getRequest().getRemoteAddress().getHostName());

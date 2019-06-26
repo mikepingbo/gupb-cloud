@@ -9,6 +9,8 @@ import reactor.core.publisher.Mono;
  */
 public class UriKeyResolver  implements KeyResolver {
 
+    public static final String BEAN_NAME = "uriKeyResolver";
+
     @Override
     public Mono<String> resolve(ServerWebExchange exchange) {
         return Mono.just(exchange.getRequest().getURI().getPath());
