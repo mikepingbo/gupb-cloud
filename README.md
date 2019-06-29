@@ -3,6 +3,7 @@
 > >  	gupbcloud-erueka  架构完成
 > >  	gupbcloud-config  架构完成（apollo已取代）
 > >  	gupbcloud-zipkin  架构完成（基于elasticsearch存储）
+> >  	gupbcloud-CAT  实时应用监控平台(美团点评开发，需要埋点，一种解决方案)
 > >  	gupbcloud-hystrix-dashboard  架构完成
 > >  	gupbcloud-admin 未开始
 > >  	gupbcloud-zull 架构完成 基于netfix1.x (webmvc)
