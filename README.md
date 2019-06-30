@@ -9,7 +9,7 @@
 > >  	gupbcloud-zull 架构完成 基于netfix1.x (webmvc)
 > >  	gupbcloud-gateway 架构完成 基于springcloud原生 (webflux)
 > >  	gupbcloud-apollo 架构已添加  架构修改过，适应此工程
-> >  	gupbcloud-prometheus(Actuator+NodeExporter+Grafana) 未开始微  服务监控告警/时序数据监控
+> >  	gupbcloud-prometheus(Actuator+micrometer+NodeExporter+Grafana) 未开始微  服务监控告警/时序数据监控
 > gupbcloud-customer（业务服务）
 > > 	gupbcloud-sso 未开始
 > > 	gupbcloud-member 未开始
