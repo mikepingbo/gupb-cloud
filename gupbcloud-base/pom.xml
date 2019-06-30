@@ -17,6 +17,13 @@
     <name>gupbcloud-base</name>
     <url>http://maven.apache.org</url>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
+
     <modules>
         <module>gupbcloud-erueka</module>
         <module>gupbcloud-hystrix-dashboard</module>

@@ -1,5 +1,6 @@
 package com.gupb.gateway.filter;
 
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
 
 import com.gupb.util.page.WrapMapperResult;
@@ -27,16 +28,20 @@ public class AuthFilter implements GlobalFilter{
 //        if ("token".equals(token)) {
 //            return chain.filter(exchange);
 //        }
-//
-//        ServerHttpResponse response = exchange.getResponse();
-//        WrapMapperResult data = new WrapMapperResult();
-//        data.setCode("401");
-//        data.setMessage("非法请求");
-//        byte[] datas = JSON.toJSONString(data).getBytes(StandardCharsets.UTF_8);
-//        DataBuffer buffer = response.bufferFactory().wrap(datas);
-//        response.setStatusCode(HttpStatus.UNAUTHORIZED);
-//        response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
-//        return response.writeWith(Mono.just(buffer));
+
+//        URI uri = exchange.getRequest().getURI();
+//        String uriPath = uri.getPath();
+//        if (uriPath.compareTo("rpc") == -1) {
+//            ServerHttpResponse response = exchange.getResponse();
+//            WrapMapperResult data = new WrapMapperResult();
+//            data.setCode("401");
+//            data.setMessage("非法请求");
+//            byte[] datas = JSON.toJSONString(data).getBytes(StandardCharsets.UTF_8);
+//            DataBuffer buffer = response.bufferFactory().wrap(datas);
+//            response.setStatusCode(HttpStatus.UNAUTHORIZED);
+//            response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
+//            return response.writeWith(Mono.just(buffer));
+//        }
 
         // 继续往下执行
         return chain.filter(exchange);
