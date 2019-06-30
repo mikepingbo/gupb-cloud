@@ -49,6 +49,12 @@ gupbcloud-feign-api
   ......
 ```   
 
+#### 架构图  
+
+##### 系统架构图  
+
+![系统架构图](https://github.com/mikepingbo/gupb-cloud/tree/master/gupbcloud-base/image/gupbcloud-image.png)  
+
 ### 项目启动顺序
 首先环境变量相关的内容配置好：JDK1.8、MySql数据库、Redis、RockerMQ、ElasticSearch(业务及监控)。  
 启动Erueka、zipkin等监控服务 3、启动gateway或zull 4、启动各业务服务。  
