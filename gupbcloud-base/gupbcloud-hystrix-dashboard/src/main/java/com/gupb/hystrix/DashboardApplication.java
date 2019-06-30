@@ -1,4 +1,4 @@
-package com.gupb;
+package com.gupb.hystrix;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

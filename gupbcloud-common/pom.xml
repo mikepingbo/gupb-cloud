@@ -65,6 +65,7 @@
         <module>gupbcloud-core</module>
         <module>gupbcloud-annotation</module>
         <module>gupbcloud-rpc</module>
+        <module>gupbcloud-common-rpc</module>
         <module>gupbcloud-mq</module>
         <module>gupbcloud-redis</module>
     </modules>
