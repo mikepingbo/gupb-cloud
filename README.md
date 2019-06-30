@@ -1,3 +1,10 @@
+### 项目启动顺序
+1、首先环境变量相关的内容配置好：JDK1.8、MySql数据库、Redis、RockerMQ、ElasticSearch(业务及监控)
+
+2、启动Erueka、zipkin等监控服务
+3、启动gateway或zull
+4、启动各业务服务
+
 ### Project Name：gupb-cloud（Ongoing）
 > gupbcloud-base(架构基础服务)
 > >  	gupbcloud-erueka  架构完成
