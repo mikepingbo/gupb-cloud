@@ -22,7 +22,7 @@ public class OrderController {
         return orderService.orderPay(count, amount);
     }
 
-    @GetMapping(value = "/test1")
+    @GetMapping(name = "ORDER_测试方法_0", value = "/test1")
     @ApiOperation(value = "测试Redis接口set")
     public String test1() {
         orderService.test1();
@@ -30,7 +30,7 @@ public class OrderController {
         return "sucess";
     }
 
-    @GetMapping(value = "/test2")
+    @GetMapping(name = "ORDER_测试方法_0", value = "/test2")
     @ApiOperation(value = "测试Redis接口get")
     public String test2(@RequestParam(value = "key") String key) {
         orderService.test2(key);
