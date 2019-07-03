@@ -19,7 +19,7 @@ public class MyApplicationRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments var1) throws Exception{
         System.out.println("MyApplicationRunner class will be execute when the project was started!");
-        System.out.println("http://localhost:" + serverPort + "/mapping/allurl");
-        restTemplate.getForObject("http://localhost:" + serverPort + "/mapping/allurl", String.class);
+        System.out.println("http://localhost:" + serverPort + "/mapping/parameter");
+        restTemplate.getForObject("http://localhost:" + serverPort + "/mapping/parameter", String.class);
     }
 }

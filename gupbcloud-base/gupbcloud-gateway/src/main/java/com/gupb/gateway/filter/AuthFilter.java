@@ -3,7 +3,9 @@ package com.gupb.gateway.filter;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 
+import com.gupb.gateway.utils.GatewayRedisUtils;
 import com.gupb.util.page.WrapMapperResult;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.io.buffer.DataBuffer;
@@ -21,6 +23,10 @@ import reactor.core.publisher.Mono;
  */
 @Component
 public class AuthFilter implements GlobalFilter{
+
+    @Autowired
+    private GatewayRedisUtils gatewayRedisUtils;
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         // TODO 鉴权逻辑
@@ -43,6 +49,7 @@ public class AuthFilter implements GlobalFilter{
 //            return response.writeWith(Mono.just(buffer));
 //        }
 
+        System.out.println(gatewayRedisUtils.get("order_test1"));
         // 继续往下执行
         return chain.filter(exchange);
     }
