@@ -14,8 +14,14 @@
 
 ### 架构图  
 
-#### 系统架构图  
+#### 总体架构图  
 ![系统架构图](gupbcloud-base/image/gupbcloud-image.png)
+
+#### 数据模型(领域模型)  
+完善中。。。
+
+#### 接口模型  
+完善中。。。
 
 ## 组织结构
 
@@ -53,6 +59,29 @@ gupbcloud-feign-api
   ├── gupbcloud-customer-search-api  search feign
   ......
 ```   
+### 技术选型
+
+#### 后端技术
+
+技术 | 说明 | 官网
+----|----|----
+Spring Cloud | 微服务框架 | [https://spring.io/projects/spring-cloud](https://spring.io/projects/spring-cloud)
+Spring Boot | 容器+MVC框架 | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+MyBatis | ORM框架  | [http://www.mybatis.org/mybatis-3/zh/index.html](http://www.mybatis.org/mybatis-3/zh/index.html)
+MyBatisGenerator | 数据层代码生成 | [http://www.mybatis.org/generator/index.html](http://www.mybatis.org/generator/index.html)
+Swagger-UI | 文档生产工具 | [https://github.com/swagger-api/swagger-ui](https://github.com/swagger-api/swagger-ui)
+Hibernator-Validator | 验证框架 | [http://hibernate.org/validator/](http://hibernate.org/validator/)
+Elasticsearch | 搜索引擎 | [https://github.com/elastic/elasticsearch](https://github.com/elastic/elasticsearch)
+RocketMq | 消息队列 | [https://rocketmq.apache.org/](https://rocketmq.apache.org/)
+Kafka | 消息队列 | [https://kafka.apache.org/](https://kafka.apache.org/)
+Kibana | 数据分析工具 | [https://www.elastic.co/cn/products/kibana](https://www.elastic.co/cn/products/kibana)
+Redis | 分布式缓存 | [https://redis.io/](https://redis.io/)
+Druid | 数据库连接池 | [https://github.com/alibaba/druid](https://github.com/alibaba/druid)
+JWT | JWT登录支持 | [https://github.com/jwtk/jjwt](https://github.com/jwtk/jjwt)
+LogStash | 日志收集 | [https://github.com/logstash/logstash-logback-encoder](https://github.com/logstash/logstash-logback-encoder)
+Lombok | 简化对象封装工具 | [https://github.com/rzwitserloot/lombok](https://github.com/rzwitserloot/lombok)
+Prometheus | 服务监控报警架构 | [https://prometheus.io/docs/introduction/overview/](https://prometheus.io/docs/introduction/overview/)
+Grafana | 度量分析与可视化套件 | [https://grafana.com/](https://grafana.com/)
 
 ### 项目启动顺序
 首先环境变量相关的内容配置好：JDK1.8、MySql数据库、Redis、RockerMQ、ElasticSearch(业务及监控)。  
