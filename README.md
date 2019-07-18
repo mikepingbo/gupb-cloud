@@ -21,6 +21,7 @@
 完善中。。。
 
 #### 接口模型  
+swagger在线/离线接口定义文档
 完善中。。。
 
 ## 组织结构
@@ -46,17 +47,20 @@ gupbcloud-common
 gupbcloud-backend
   ├── gupbcloud-admin  admin服务
   ├── gupbcloud-seller  seller服务
+  ├── gupbcloud-authority  C端控制权限系统
+  ├── gupbcloud-transactiondata  事务日志及数据迁移/同步系统
 gupbcloud-customer
-  ├── gupbcloud-sso  单点登录
+  ├── gupbcloud-sso  单点登录/静默注册、登录系统
   ├── gupbcloud-search  ES查询服务
   ├── gupbcloud-order  订单服务
   ├── gupbcloud-account  账户服务
   ├── gupbcloud-inventory  库存服务
 gupbcloud-feign-api
-  ├── gupbcloud-backend-admin-api  admin feign
-  ├── gupbcloud-backend-seller-api  seller feign
   ├── gupbcloud-customer-sso-api  sso feign
   ├── gupbcloud-customer-search-api  search feign
+  ├── gupbcloud-customer-order-api  order feign
+  ├── gupbcloud-customer-account-api  account feign
+  ├── gupbcloud-customer-inventory-api  inventory feign
   ......
 ```   
 ### 技术选型
@@ -84,5 +88,5 @@ Prometheus | 服务监控报警架构 | [https://prometheus.io/docs/introduction
 Grafana | 度量分析与可视化套件 | [https://grafana.com/](https://grafana.com/)
 
 ### 项目启动顺序
-首先环境变量相关的内容配置好：JDK1.8、MySql数据库、Redis、RockerMQ、ElasticSearch(业务及监控)。  
+首先环境变量相关的内容配置好：JDK1.8、MySql数据库、Redis、RockerMQ、KAFKA、ElasticSearch(业务及监控)。  
 启动Erueka、zipkin等监控服务 3、启动gateway或zull 4、启动各业务服务。  
