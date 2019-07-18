@@ -2,6 +2,7 @@ package com.gupb.redis.service;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.gupb.util.json.JackJsonUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -36,6 +37,35 @@ public abstract class AbRedisConfiguration {
             ValueOperations<String, String> opsForValue = getStringRedisTemplate().opsForValue();
             opsForValue.set(key, value, expireTime, timeUnit);
             result = true;
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
+        return result;
+    }
+
+    public boolean setObjectNoEx(final String key, Object value) {
+        boolean result = false;
+        try {
+            ValueOperations<String, String> opsForValue = stringRedisTemplate.opsForValue();
+            String string = JackJsonUtil.objectToJsonStr(value);
+            opsForValue.set(key, string);
+            result = true;
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
+        return result;
+    }
+
+    public <T> T getObject(final String key, Class<T> classOfT) {
+        T result = null;
+        try {
+            ValueOperations<String, String> operations = stringRedisTemplate.opsForValue();
+            String value = operations.get(key);
+            // logger.info("key值" + key + "从redis获取到的value值:" + value);
+            if (StringUtils.isBlank(value)) {
+                return null;
+            }
+            result = JackJsonUtil.jsonStrToObject(value, classOfT);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
         }

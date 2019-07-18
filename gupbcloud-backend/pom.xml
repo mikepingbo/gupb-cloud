@@ -28,6 +28,8 @@
     <modules>
         <module>gupbcloud-admin</module>
         <module>gupbcloud-seller</module>
+        <module>gupbcloud-authority</module>
+        <module>gupbcloud-transactiondata</module>
     </modules>
 
     <dependencies>
