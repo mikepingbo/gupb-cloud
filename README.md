@@ -28,29 +28,31 @@ swagger在线/离线接口定义文档
 
 ``` lua
 gupbcloud-base
-  ├── gupbcloud-erueka  服务注册与发现
-  ├── gupbcloud-config  基于git管理配置中心，已被apollo取代
-  ├── gupbcloud-zipkin  链路监控 基于elasticsearch存储
-  ├── gupbcloud-CAT  实时应用监控平台
-  ├── gupbcloud-hystrix-dashboard  集群监控平台
-  ├── gupbcloud-zull 网关服务 基于netfix1.x (webmvc)
-  ├── gupbcloud-gateway 网关服务 基于springcloud原生 (webflux)
-  ├── gupbcloud-apollo 配置中心
+  ├── gupbcloud-erueka  服务注册与发现服务
+  ├── gupbcloud-config  基于git管理配置中心服务，已被apollo服务取代
+  ├── gupbcloud-zipkin  链路监控服务(基于elasticsearch存储)
+  ├── gupbcloud-CAT  实时应用监控平台服务
+  ├── gupbcloud-hystrix-dashboard  集群监控平台服务
+  ├── gupbcloud-zull zull网关服务 基于netfix1.x (webmvc)
+  ├── gupbcloud-gateway gateway网关服务 基于springcloud原生 (webflux)
+  ├── gupbcloud-apollo 配置中心服务
   ├── gupbcloud-prometheus(Actuator+micrometer+metrics+Grafana) 服务监控告警/时序数据监控平台
 gupbcloud-common
   ├── gupbcloud-annotation  注解服务管理
   ├── gupbcloud-core  服务实现
   ├── gupbcloud-mq  MQ服务管理
   ├── gupbcloud-redis  NoSql服务管理
-  ├── gupbcloud-rpc  Bean服务管理
+  ├── gupbcloud-rpc  MQ、Feign等加载服务管理
+  ├── gupbcloud-requestmapping-rpc  各服务restful api接口收集及接口权限判断
+  ├── gupbcloud-common-rpc 整体微服务加载服务管理(actuator prometheus grafana等)
   ├── gupbcloud-util  工具服务管理
 gupbcloud-backend
   ├── gupbcloud-admin  admin服务
   ├── gupbcloud-seller  seller服务
-  ├── gupbcloud-authority  C端控制权限系统
-  ├── gupbcloud-transactiondata  事务日志及数据迁移/同步系统
+  ├── gupbcloud-authority  各端权限控制管理服务
+  ├── gupbcloud-transactiondata  事务日志及数据迁移/同步服务
 gupbcloud-customer
-  ├── gupbcloud-sso  单点登录/静默注册、登录系统
+  ├── gupbcloud-sso  单点登录/静默注册、登录服务
   ├── gupbcloud-search  ES查询服务
   ├── gupbcloud-order  订单服务
   ├── gupbcloud-account  账户服务
