@@ -8,20 +8,20 @@
 架构基于SpringCloud实现。  
 基础服务包括：服务注册与发现、配置中心、链路监控、实时应用监控平台、集群监控平台、网关服务、服务监控告警/时序数据监控平台、基础服务监控平台等。  
 共通服务包括：MQ服务、ElasticSearch服务、NoSql服务、注解服务、分布式事务服务、多维度数据同步服务、定时任务服务、存储服务等。  
-后台管理服务包括：Admin管理服务、Seller管理服务。  
+后台管理服务包括：Admin管理服务、Seller管理服务、接口权限控制管理服务、事务日志及数据迁移/同步管理服务、跨域/防渗透安全管理服务。  
 业务服务包括：单点登录服务、鉴权服务、用户管理服务、等等。  
 组件化服务包括：Feign API服务。  
 
 ### 架构图  
 
 #### 总体架构图  
-![系统架构图](gupbcloud-base/image/gupbcloud-image.png)
+![系统架构图](gupbcloud-base/image/gupbcloud-image.png)  
 
 #### 数据模型(领域模型)  
 完善中。。。
 
 #### 接口模型  
-swagger在线/离线接口定义文档
+swagger在线/离线接口定义文档  
 完善中。。。
 
 ## 组织结构
@@ -49,8 +49,9 @@ gupbcloud-common
 gupbcloud-backend
   ├── gupbcloud-admin  admin服务
   ├── gupbcloud-seller  seller服务
-  ├── gupbcloud-authority  各端权限控制管理服务
-  ├── gupbcloud-transactiondata  事务日志及数据迁移/同步服务
+  ├── gupbcloud-authority  各端接口权限控制管理服务
+  ├── gupbcloud-transactiondata  事务日志及数据迁移/同步管理服务
+  ├── gupbcloud-crosssecurity  跨域/防渗透安全管理服务
 gupbcloud-customer
   ├── gupbcloud-sso  单点登录/静默注册、登录服务
   ├── gupbcloud-search  ES查询服务
