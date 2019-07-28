@@ -51,7 +51,7 @@ gupbcloud-backend
   ├── gupbcloud-seller  seller服务
   ├── gupbcloud-authority  各端接口权限控制管理服务
   ├── gupbcloud-transactiondata  事务日志及数据迁移/同步管理服务
-  ├── gupbcloud-crosssecurity  跨域/防渗透安全管理服务
+  ├── gupbcloud-corsssecurity  网络安全管理服务(防CSRF、CORS、XSS组合网络攻击)
 gupbcloud-customer
   ├── gupbcloud-sso  单点登录/静默注册、登录服务
   ├── gupbcloud-search  ES查询服务
@@ -88,7 +88,7 @@ JWT | JWT登录支持 | [https://github.com/jwtk/jjwt](https://github.com/jwtk/j
 LogStash | 日志收集 | [https://github.com/logstash/logstash-logback-encoder](https://github.com/logstash/logstash-logback-encoder)
 Lombok | 简化对象封装工具 | [https://github.com/rzwitserloot/lombok](https://github.com/rzwitserloot/lombok)
 Prometheus | 服务监控报警架构 | [https://prometheus.io/docs/introduction/overview/](https://prometheus.io/docs/introduction/overview/)
-Grafana | 度量分析与可视化套件 | [https://grafana.com/](https://grafana.com/)
+Grafana | 度量分析与可视化套件 | [https://grafana.com/](https://grafana.com/)  
 
 ### 项目启动顺序
 首先环境变量相关的内容配置好：JDK1.8、MySql数据库、Redis、RockerMQ、KAFKA、ElasticSearch(业务及监控)。  
