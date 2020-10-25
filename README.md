@@ -15,7 +15,7 @@
 ### 架构图  
 
 #### 总体架构图  
-![系统架构图](gupbcloud-base/image/gupbcloud.png)  
+![系统架构图](https://gupb.oss-cn-beijing.aliyuncs.com/gupbcloud.png)  
 
 #### 数据模型(领域模型)  
 完善中。。。
