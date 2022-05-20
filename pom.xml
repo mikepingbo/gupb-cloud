@@ -19,7 +19,7 @@
         <swagger2markup.version>1.2.0</swagger2markup.version>
         <springfox.version>2.9.2</springfox.version>
 
-        <gson.verions>2.6.2</gson.verions>
+        <gson.verions>2.8.9</gson.verions>
     </properties>
 
     <!-- spring boot版本 -->
